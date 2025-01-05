@@ -35,13 +35,15 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   intl:
   easy_localization: 
-  flutter_native_splash: ^2.4.3
   # An SVG rendering and widget library for Flutter , which allows painting
   flutter_svg: ^2.0.16
   # for adapting screen and font size 
   flutter_screenutil: ^5.9.3
+  
+  flutter_native_splash: ^2.4.3
 
 dev_dependencies:
+  
   flutter_test:
     sdk: flutter
 
@@ -51,6 +53,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

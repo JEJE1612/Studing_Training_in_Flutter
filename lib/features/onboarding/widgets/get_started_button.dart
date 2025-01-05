@@ -20,7 +20,7 @@ class GetStartedButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10)))),
         child: Text(
           'Get Started',
-          style: TextStyles.font16GrayBold,
+          style: TextStyles.font16WhiteSemiBold,
         ));
   }
 }
