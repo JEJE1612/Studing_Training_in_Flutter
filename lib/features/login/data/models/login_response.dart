@@ -1,3 +1,4 @@
+import 'package:flutter_complete_advanced/features/login/data/models/login_request_body.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'login_response.g.dart';
 
@@ -13,6 +14,8 @@ class LoginResponse {
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
+
+  login(LoginRequestBody loginRequestBody) {}
 }
 
 @JsonSerializable()

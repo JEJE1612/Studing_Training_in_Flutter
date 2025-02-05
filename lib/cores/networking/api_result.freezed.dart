@@ -19,19 +19,19 @@ mixin _$ApiResult<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(String message) failure,
+    required TResult Function(ErrorHandler message) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(ErrorHandler message)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(String message)? failure,
+    TResult Function(ErrorHandler message)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,7 +147,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(String message) failure,
+    required TResult Function(ErrorHandler message) failure,
   }) {
     return success(data);
   }
@@ -156,7 +156,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(ErrorHandler message)? failure,
   }) {
     return success?.call(data);
   }
@@ -165,7 +165,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(String message)? failure,
+    TResult Function(ErrorHandler message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -224,7 +224,7 @@ abstract class _$$FailureImplCopyWith<T, $Res> {
           _$FailureImpl<T> value, $Res Function(_$FailureImpl<T>) then) =
       __$$FailureImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String message});
+  $Res call({ErrorHandler message});
 }
 
 /// @nodoc
@@ -246,7 +246,7 @@ class __$$FailureImplCopyWithImpl<T, $Res>
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ErrorHandler,
     ));
   }
 }
@@ -257,7 +257,7 @@ class _$FailureImpl<T> implements Failure<T> {
   const _$FailureImpl(this.message);
 
   @override
-  final String message;
+  final ErrorHandler message;
 
   @override
   String toString() {
@@ -287,7 +287,7 @@ class _$FailureImpl<T> implements Failure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(String message) failure,
+    required TResult Function(ErrorHandler message) failure,
   }) {
     return failure(message);
   }
@@ -296,7 +296,7 @@ class _$FailureImpl<T> implements Failure<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(ErrorHandler message)? failure,
   }) {
     return failure?.call(message);
   }
@@ -305,7 +305,7 @@ class _$FailureImpl<T> implements Failure<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(String message)? failure,
+    TResult Function(ErrorHandler message)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -347,9 +347,9 @@ class _$FailureImpl<T> implements Failure<T> {
 }
 
 abstract class Failure<T> implements ApiResult<T> {
-  const factory Failure(final String message) = _$FailureImpl<T>;
+  const factory Failure(final ErrorHandler message) = _$FailureImpl<T>;
 
-  String get message;
+  ErrorHandler get message;
 
   /// Create a copy of ApiResult
   /// with the given fields replaced by the non-null parameter values.
