@@ -10,6 +10,21 @@ android {
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
+ // ...
+    flavorDimensions += "default"
+
+    productFlavors {
+        productFlavors{
+            dimension = "default"
+            resValue(type = "string", name = "app_name", value = "DocDoc Production " )
+        }
+        
+        development {
+            dimension = "default"
+            resValue(type = "string", name = "app_name", value = "DocDoc Development " )
+        
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

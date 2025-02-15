@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_complete_advanced/cores/di/dependency_injection.dart';
 import 'package:flutter_complete_advanced/cores/routing/app_router.dart';
 import 'package:flutter_complete_advanced/doc_app.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+Future<void> main() async {
   setupGetIt();
-  runApp(DocApp(
+  await ScreenUtil.ensureScreenSize();
+  runApp(
+    DocApp(
     appRouter: AppRouter(),
   ));
 }
